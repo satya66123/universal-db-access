@@ -13,6 +13,10 @@ Implemented in:
 The business logic and API contracts remain the same;
 only the data access layer changes.
 
+DevOps configs included for deployment readiness.
+Not executed locally.
+
+
 This repo is designed to reflect
 **remote contract–style backend development** with
 clear structure, documentation, and incremental commits.
