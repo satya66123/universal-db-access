@@ -1,0 +1,45 @@
+name: CI - Universal DB Backend
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  java-build:
+    name: Java Backend Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Verify Java project structure
+        run: |
+          echo "Checking Java backend folders"
+          ls java-backend || exit 1
+
+  php-check:
+    name: PHP Backend Syntax Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: PHP syntax check
+        run: |
+          echo "Running PHP lint"
+          find php-backend -name "*.php" -print0 | xargs -0 -n1 php -l
