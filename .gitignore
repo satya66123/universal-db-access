@@ -27,3 +27,8 @@ replay_pid*
 *.bak
 **/*.bak
 
+*.bak
+*.log
+target/
+vendor/
+
