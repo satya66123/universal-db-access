@@ -115,3 +115,6 @@ This project is designed to demonstrate:
 - Focus is on correctness and clarity, not feature count
 - Code is intentionally kept simple and readable
 - Incremental commits reflect real-world collaboration
+
+
+![CI](https://github.com/<your-username>/universal-db-backend/actions/workflows/ci.yml/badge.svg)
